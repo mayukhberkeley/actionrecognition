@@ -28,3 +28,6 @@ The frames recieved from the camera are buffered on the Jetson via a sliding win
 Create a Wifi network on the Jetson. The Jeton will lose connectivity to the internet which is OK since we don't need it to talk to anything but the camera.
 A web app running on a mobile device e.g. a phone or may be even a laptop will connect to a web server running on the Jetson over this Wifi network.
 
+![image](https://user-images.githubusercontent.com/55649656/113666170-7a0b7c80-96cc-11eb-92f1-afc8d4398348.png)
+
+
