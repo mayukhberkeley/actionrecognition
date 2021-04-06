@@ -25,9 +25,22 @@ The frames recieved from the camera are buffered on the Jetson via a sliding win
 
 ##### Conecting to the Jetson on board a vehicle
 
-Create a Wifi network on the Jetson. The Jeton will lose connectivity to the internet which is OK since we don't need it to talk to anything but the camera.
-A web app running on a mobile device e.g. a phone or may be even a laptop will connect to a web server running on the Jetson over this Wifi network.
+Tried USB tethering, connected the Jetson to the iPhone via USB-A ports on the Jetson. Jetson is able to access the internet via the connection that is created, however, the phone cannot reach the Jetson since there is no IP available that is open to communication.
 
-![image](https://user-images.githubusercontent.com/55649656/113666170-7a0b7c80-96cc-11eb-92f1-afc8d4398348.png)
+_When using USB tethering, the computer sees the smartphone as a USB modem. Your computer will not be getting an IP address as all outside communication is handled by the phone (modem).
+
+_The only way the phone will have an IP address is if it is connecting via WiFi in which case, it would be simpler to connect your laptop to the same WiFi the phone is using instead._
+
+_If the phone is using the cellular network, it will not have its own IP address either. It will be using its SIM ID on the cellular network instead. The IP address seen by other devices on the internet is a NATted address used by multiple devices on the cellular network._
+
+Ideally, we sould use a M2 Wifi module USB based that can connect to the Jetson. This Wifi module will allow us to connect to the Jetson from the phone.
+
+Or, we could use a Bluetooth module. Both these options would require procuring these gadgets which might take a while to arrive. 
+
+A very common gadget available with most of us is the Wifi hotspot.
+
+A 4G LTE hotspot device uses a SIM card to provide internet access to the devices connected to it. Both the Jetson and the phone will connect to thie hotspot device. This will assign local IP addresses to both the Jetson and the Phone. We can view these IPs from the management console of the hotspot. The App running on the phone can then connect to the Jetson using the IP address.
+
+Since I do not have a hotspot, I would use the home Wifi router for this purpose assuming that it sould work the same way for the hotspot as well.
 
 
