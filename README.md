@@ -44,3 +44,19 @@ A 4G LTE hotspot device uses a SIM card to provide internet access to the device
 Since I do not have a hotspot, I would use the home Wifi router for this purpose assuming that it sould work the same way for the hotspot as well.
 
 
+#### Stream video from Jetson to a web browser
+Read the frame from the video feed of the camera
+encode the image in JPEG format
+convert the encoded image to bytearray format
+send the bytearray as image/jpeg content type in the http response
+Content-Type: image/jpeg
+bytearray(jpeg_encoded_image)
+
+yield(b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' + bytearray(encodedImage) + b'\r\n')
+
+
+get the docker image to use on the Jetson, and run the container with access to the camera
+
+sudo docker run -it --rm --runtime=nvidia --device=/dev/video0 -v ~/w251/finalproject/app:/app  -p 8888:8888 mayukhd/jetson_4_1:cp36torch1.7
+
+
