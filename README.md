@@ -50,6 +50,14 @@ Here are the steps to achieve this:
 1. Ensure you have the serial cable plugged in to the Jetson and the screen tool is used to open a session to the Jetson.
 2. Using the Ubuntu GUI (use VNC Viewer), create a new Wifi connection on the Xavier of mode = Hotspot
 
+![image](https://user-images.githubusercontent.com/55649656/114140786-59426180-992e-11eb-9e47-511ad8ecc28d.png)
+
+3. Connect the xavier to this new Wifi network
+4. Connect your phone/laptop to this Wifi network
+
+Both the phone and the xavier will get a 10.42.* address when on this network. You can use this IP to talk to the xavier from the phone.
+
+
 #### Stream video from Jetson to a web browser
 Read the frame from the video feed of the camera
 encode the image in JPEG format
