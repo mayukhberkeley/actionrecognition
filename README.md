@@ -43,6 +43,12 @@ A 4G LTE hotspot device uses a SIM card to provide internet access to the device
 
 Since I do not have a hotspot, I would use the home Wifi router for this purpose assuming that it sould work the same way for the hotspot as well.
 
+Another option is to use the Xavier's built in network device to create a sort of Wifi hotspot network that both the Jetson and the Phone can connect to then. This will allow the Phone to talk to the Jetson even though they will not have any connectivity to the internet.
+
+Here are the steps to achieve this:
+
+1. Ensure you have the serial cable plugged in to the Jetson and the screen tool is used to open a session to the Jetson.
+2. Using the Ubuntu GUI (use VNC Viewer), create a new Wifi connection on the Xavier of mode = Hotspot
 
 #### Stream video from Jetson to a web browser
 Read the frame from the video feed of the camera
